@@ -1,3 +1,0 @@
-Trước khi commit code thì pull code về sửa rồi mới commit code lên 
-
-Khi pull code về nhớ vào resoureces để sửa properties tên dtb, username,password
