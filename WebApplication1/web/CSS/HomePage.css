@@ -1,0 +1,404 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : May 16, 2024, 10:05:27 PM
+    Author     : DELL
+*/
+.home-page-clone {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.home-page-clone .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1314px;
+    height: 3235px;
+    position: relative;
+}
+
+.home-page-clone .overlap {
+    position: absolute;
+    width: 1344px;
+    height: 2057px;
+    top: 1309px;
+    left: -24px;
+}
+
+.home-page-clone .rectangle {
+    position: absolute;
+    width: 1344px;
+    height: 472px;
+    top: 1585px;
+    left: 0;
+    background-color: #067392;
+}
+
+.home-page-clone .ellipse {
+    position: absolute;
+    width: 1314px;
+    height: 1634px;
+    top: 0;
+    left: 24px;
+    object-fit: cover;
+}
+
+.home-page-clone .text-wrapper {
+    position: absolute;
+    top: 89px;
+    left: 469px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 35px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.home-page-clone .rectangle-2 {
+    position: absolute;
+    width: 553px;
+    height: 345px;
+    top: 285px;
+    left: 118px;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.home-page-clone .rectangle-3 {
+    position: absolute;
+    width: 553px;
+    height: 345px;
+    top: 710px;
+    left: 791px;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.home-page-clone .rectangle-4 {
+    position: absolute;
+    width: 553px;
+    height: 345px;
+    top: 1159px;
+    left: 118px;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.home-page-clone .component {
+    position: absolute;
+    width: 607px;
+    height: 210px;
+    top: 313px;
+    left: 721px;
+}
+
+.home-page-clone .text-wrapper-2 {
+    position: absolute;
+    top: 35px;
+    left: -43px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.home-page-clone .p {
+    position: absolute;
+    top: 74px;
+    left: -43px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.home-page-clone .text-wrapper-3 {
+    position: absolute;
+    width: 553px;
+    top: 125px;
+    left: -43px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.home-page-clone .component-2 {
+    position: absolute;
+    width: 607px;
+    height: 210px;
+    top: 756px;
+    left: 108px;
+}
+
+.home-page-clone .component-3 {
+    position: absolute;
+    width: 607px;
+    height: 210px;
+    top: 1191px;
+    left: 721px;
+}
+
+.home-page-clone .overlap-group {
+    position: absolute;
+    width: 1314px;
+    height: 799px;
+    top: 211px;
+    left: 0;
+    background-image: url(./img/hoc-phi-truong-mam-non-song-ngu-optimized-scaled-1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.home-page-clone .component-4 {
+    position: absolute;
+    width: 409px;
+    height: 179px;
+    top: 316px;
+    left: 112px;
+}
+
+.home-page-clone .text-wrapper-4 {
+    position: absolute;
+    width: 409px;
+    top: -1px;
+    left: 0;
+    font-family: "Josefin Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 80px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.home-page-clone .text-wrapper-5 {
+    position: absolute;
+    width: 328px;
+    top: 97px;
+    left: 40px;
+    font-family: "Josefin Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #00d1ff;
+    font-size: 80px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.home-page-clone .text-wrapper-6 {
+    position: absolute;
+    width: 775px;
+    top: 512px;
+    left: 112px;
+    font-family: "Josefin Sans-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.home-page-clone .component-5 {
+    position: absolute;
+    width: 1117px;
+    height: 59px;
+    top: 107px;
+    left: 64px;
+}
+
+.home-page-clone .div-wrapper {
+    position: absolute;
+    width: 203px;
+    height: 59px;
+    top: 0;
+    left: 931px;
+    background-color: #00b8ec;
+    border-radius: 30px;
+}
+
+.home-page-clone .text-wrapper-7 {
+    position: absolute;
+    top: 14px;
+    left: 70px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.home-page-clone .text-wrapper-8 {
+    position: absolute;
+    top: 15px;
+    left: 780px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.home-page-clone .text-wrapper-9 {
+    position: absolute;
+    top: 15px;
+    left: 630px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.home-page-clone .text-wrapper-10 {
+    top: 15px;
+    left: 527px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    font-size: 24px;
+    position: absolute;
+    color: #00b8ec;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.home-page-clone .text-wrapper-11 {
+    top: 6px;
+    left: -7px;
+    font-family: "Kavoon-Regular", Helvetica;
+    font-weight: 400;
+    font-size: 40px;
+    position: absolute;
+    color: #00b8ec;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.home-page-clone .icon-park-solid-fire {
+    position: absolute;
+    width: 36px;
+    height: 37px;
+    top: 11px;
+    left: 137px;
+}
+
+.home-page-clone .partners {
+    position: absolute;
+    width: 1487px;
+    height: 193px;
+    top: 1010px;
+    left: -143px;
+    background-color: #f7f7f7;
+}
+
+.home-page-clone .image-wrapper {
+    position: absolute;
+    width: 69px;
+    height: 50px;
+    top: 72px;
+    left: 466px;
+    background-image: url(./img/mask-group.png);
+    background-size: 100% 100%;
+}
+
+.home-page-clone .image {
+    width: 47px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 50px;
+    object-fit: cover;
+}
+
+.home-page-clone .img {
+    width: 47px;
+    top: 72px;
+    left: 171px;
+    position: absolute;
+    height: 50px;
+    object-fit: cover;
+}
+
+.home-page-clone .image-2 {
+    width: 47px;
+    top: 72px;
+    left: 1078px;
+    position: absolute;
+    height: 50px;
+    object-fit: cover;
+}
+
+.home-page-clone .image-3 {
+    width: 47px;
+    top: 71px;
+    left: 783px;
+    position: absolute;
+    height: 50px;
+    object-fit: cover;
+}
+
+.home-page-clone .image-4 {
+    width: 37px;
+    top: 72px;
+    left: 1420px;
+    position: absolute;
+    height: 50px;
+    object-fit: cover;
+}
+
+
+
+:root {
+    --demopage-darkbackgroundforcomponentsdemo: rgba(37, 31, 31, 1);
+    --demopage-lightbackgroundforcomponentsdemo: rgba(233, 232, 232, 1);
+    --themes-black-100: rgba(28, 28, 28, 1);
+    --themes-black-10: rgba(28, 28, 28, 0.1);
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-themes-mode="light">
+        <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-themes-mode="light"] {
+    --themes-black-100: rgba(28, 28, 28, 1);
+    --themes-black-10: rgba(28, 28, 28, 0.1);
+}
+
+[data-themes-mode="dark"] {
+    --themes-black-100: rgba(255, 255, 255, 1);
+    --themes-black-10: rgba(255, 255, 255, 0.2);
+}
+
