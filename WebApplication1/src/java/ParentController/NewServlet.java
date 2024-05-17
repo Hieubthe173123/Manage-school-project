@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package Controller;
+package ParentController;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -54,7 +54,7 @@ public class NewServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         
-        request.getRequestDispatcher("./FE_Parent/HomePage.jsp").forward(request, response);
+        request.getRequestDispatcher("FE_Parent/HomePage.jsp").forward(request, response);
     }
 
     
