@@ -8,74 +8,92 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kavoon:wght@400&display=swap" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin Sans:wght@700&display=swap" />
         <link rel="stylesheet" href="../CSS/HomePage.css"/>
+
+
     </head>
     <body>
-    <body>
+
         <div class="home-page-clone">
-            <div class="div">
-                <div class="overlap">
-                    <div class="rectangle"></div>
-                    <img class="ellipse" src="img/ellipse-1.svg" />
-                    <p class="text-wrapper">Sakura có thể giúp gì cho bạn?</p>
-                    <div class="rectangle-2"></div>
-                    <div class="rectangle-3"></div>
-                    <div class="rectangle-4"></div>
-                    <div class="component">
-                        <div class="text-wrapper-2">Trung tâm hoạt động</div>
-                        <p class="p">Quản lý trường học của bạn trên nền tảng</p>
-                        <p class="text-wrapper-3">
-                            Hệ thống dễ sử dụng của chúng tôi được thiết kế để các trường giám sát và phân tích dữ liệu liên quan đến
-                            học sinh, nhân viên, phụ huynh và quản lý hàng ngày.
-                        </p>
-                    </div>
-                    <div class="component-2">
-                        <div class="text-wrapper-2">Trung tâm hoạt động</div>
-                        <p class="p">Quản lý trường học của bạn trên nền tảng</p>
-                        <p class="text-wrapper-3">
-                            Hệ thống dễ sử dụng của chúng tôi được thiết kế để các trường giám sát và phân tích dữ liệu liên quan đến
-                            học sinh, nhân viên, phụ huynh và quản lý hàng ngày.
-                        </p>
-                    </div>
-                    <div class="component-3">
-                        <div class="text-wrapper-2">Trung tâm hoạt động</div>
-                        <p class="p">Quản lý trường học của bạn trên nền tảng</p>
-                        <p class="text-wrapper-3">
-                            Hệ thống dễ sử dụng của chúng tôi được thiết kế để các trường giám sát và phân tích dữ liệu liên quan đến
-                            học sinh, nhân viên, phụ huynh và quản lý hàng ngày.
-                        </p>
-                    </div>
+            <div class="home-page-clone-child">
+            </div>
+            <img class="hoc-phi-truong-mam-non-song-ng-icon" alt="" src="hoc-phi-truong-mam-non-song-ngu_optimized-scaled 1.png">
+
+            <div class="component-1">
+                <div class="component-1-child">
                 </div>
-                <div class="overlap-group">
-                    <div class="component-4">
-                        <div class="text-wrapper-4">Trường Học</div>
-                        <div class="text-wrapper-5">Sáng Tạo</div>
-                    </div>
-                    <p class="text-wrapper-6">
-                        Trường mầm non vốn là cái nôi đầu đời nâng bước và xây dựng nền tảng cho trẻ ngay trong giai đoạn từ 0 đến 6
-                        tuổi. Việc lựa chọn trường mầm non song ngữ, trường mầm non quốc tế luôn là vấn đề nan giải với các bậc phụ
-                        huynh học sinh.
-                    </p>
-                </div>
-                <div class="component-5">
-                    <div class="div-wrapper"><div class="text-wrapper-7">Login</div></div>
-                    <div class="text-wrapper-8">Contact</div>
-                    <div class="text-wrapper-9">About Us</div>
-                    <div class="text-wrapper-10">Home</div>
-                    <div class="text-wrapper-11">Sakura</div>
-                    <img class="icon-park-solid-fire" src="img/icon-park-solid-fire.svg" />
-                </div>
-                <div class="partners">
-                    <div class="image-wrapper"><img class="image" src="img/image-913.png" /></div>
-                    <img class="img" src="img/image-909.png" />
-                    <img class="image-2" src="img/image-915.png" />
-                    <img class="image-3" src="img/image-914.png" />
-                    <img class="image-4" src="img/image-916.png" />
+                <b class="login">Login</b>
+                <b class="contact">Contact</b>
+                <b class="about-us">About Us</b>
+                <b class="home">Home</b>
+                <div class="sakura">Sakura</div>
+                <img class="icon-park-solidfire" alt="" src="icon-park-solid:fire.svg">
+
+            </div>
+            <div class="component-2">
+                <b class="trng-hc">Trường Học </b>
+                <b class="sng-to">Sáng Tạo</b>
+                <div class="component-2-child">
                 </div>
             </div>
+            <b class="trng-mm-non-container">
+                <p class="trng-mm-non">Trường mầm non vốn là cái nôi đầu đời nâng bước và xây dựng nền tảng cho trẻ ngay trong giai đoạn từ 0 đến 6 tuổi. Việc lựa chọn trường mầm non song ngữ, trường mầm non quốc tế luôn là vấn đề nan giải với các bậc phụ huynh học sinh.</p>
+            </b>
+            <img class="partners-icon" alt="" src="partners.png">
+
+            <div class="home-page-clone-item">
+            </div>
+            <b class="sakura-c-th">Sakura có thể giúp gì cho bạn?</b>
+            <div class="home-page-clone-inner">
+            </div>
+            <div class="rectangle-div">
+            </div>
+            <div class="home-page-clone-child1">
+            </div>
+            <div class="component-3">
+                <div class="trung-tm-hot">Trung tâm hoạt động</div>
+                <b class="qun-l-trng">Quản lý trường học của bạn trên nền tảng</b>
+                <div class="h-thng-d">Hệ thống dễ sử dụng của chúng tôi được thiết kế để các trường giám sát và phân tích dữ liệu liên quan đến học sinh, nhân viên, phụ huynh và quản lý hàng ngày.</div>
+            </div>
+            <div class="component-4">
+                <div class="trung-tm-hot">Trung tâm hoạt động</div>
+                <b class="qun-l-trng">Quản lý trường học của bạn trên nền tảng</b>
+                <div class="h-thng-d">Hệ thống dễ sử dụng của chúng tôi được thiết kế để các trường giám sát và phân tích dữ liệu liên quan đến học sinh, nhân viên, phụ huynh và quản lý hàng ngày.</div>
+            </div>
+            <div class="component-5">
+                <div class="trung-tm-hot">Trung tâm hoạt động</div>
+                <b class="qun-l-trng">Quản lý trường học của bạn trên nền tảng</b>
+                <div class="h-thng-d">Hệ thống dễ sử dụng của chúng tôi được thiết kế để các trường giám sát và phân tích dữ liệu liên quan đến học sinh, nhân viên, phụ huynh và quản lý hàng ngày.</div>
+            </div>
+            <div class="frame-div">
+            </div>
+            <div class="wireframer">
+            </div>
+            <div class="sakura1">Sakura</div>
+            <div class="trung-tm-hot3">Trung tâm hoạt động</div>
+            <div class="hot-ng">Hoạt động</div>
+            <div class="hot-ng1">Hoạt động</div>
+            <div class="hot-ng2">Hoạt động</div>
+            <div class="hot-ng3">Hoạt động</div>
+            <div class="hot-ng4">Hoạt động</div>
+            <div class="hot-ng5">Hoạt động</div>
+            <div class="hot-ng6">Hoạt động</div>
+            <div class="hot-ng7">Hoạt động</div>
+            <div class="hot-ng8">Hoạt động</div>
+            <div class="hot-ng9">Hoạt động</div>
+            <img class="line-icon" alt="" src="Line 1.svg">
+
         </div>
+
+
+
+
     </body>
-</body>
 </html>
