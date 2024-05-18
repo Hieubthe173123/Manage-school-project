@@ -8,6 +8,6 @@ package DAO;
  *
  * @author admin
  */
-public class MenuDBContext {
+public class MenuDBContext extends DBContext{
     
 }

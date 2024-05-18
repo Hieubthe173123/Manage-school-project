@@ -4,10 +4,25 @@
  */
 package DAO;
 
+import Entity.Account;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author admin
  */
-public class AccountDBContext {
+public class AccountDBContext extends DBContext{
+    public List<Account> getAllAccount(){
+        List<Account> list = new ArrayList<>();
+        
+        
+        return list;
+    }
     
+    public Account getAccountById(String username){
+        Account acc = new Account();
+  
+        return acc;
+    }
 }

@@ -8,6 +8,6 @@ package DAO;
  *
  * @author admin
  */
-public class AgeDBContext {
+public class AgeDBContext extends DBContext{
     
 }

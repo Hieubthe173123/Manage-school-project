@@ -6,8 +6,8 @@ package DAO;
 
 /**
  *
- * @author admin
+ * @author Admin
  */
-public class LecturersDBContext extends DBContext{
+public class SchedulesDBContext extends DBContext{
     
 }

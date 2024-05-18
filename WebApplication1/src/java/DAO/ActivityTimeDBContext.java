@@ -8,6 +8,6 @@ package DAO;
  *
  * @author admin
  */
-public class ActivityTimeDBContext {
+public class ActivityTimeDBContext extends DBContext{
     
 }
