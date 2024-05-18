@@ -9,5 +9,76 @@ package Entity;
  * @author admin
  */
 public class Account {
-    private 
+    private int aid;
+    private String username;
+    private String password;
+    private int role;
+    private int pid;
+    private int lid;
+
+    public Account() {
+    }
+
+    public Account(int aid, String username, String password, int role, int pid, int lid) {
+        this.aid = aid;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.pid = pid;
+        this.lid = lid;
+    }
+
+    public int getAid() {
+        return aid;
+    }
+
+    public void setAid(int aid) {
+        this.aid = aid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public int getPid() {
+        return pid;
+    }
+
+    public void setPid(int pid) {
+        this.pid = pid;
+    }
+
+    public int getLid() {
+        return lid;
+    }
+
+    public void setLid(int lid) {
+        this.lid = lid;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" + "aid=" + aid + ", username=" + username + ", password=" + password + ", role=" + role + ", pid=" + pid + ", lid=" + lid + '}';
+    }
+    
 }
