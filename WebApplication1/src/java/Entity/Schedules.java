@@ -8,6 +8,6 @@ package Entity;
  *
  * @author admin
  */
-public class Account {
-    private 
+public class Schedules {
+    
 }

@@ -8,6 +8,6 @@ package Entity;
  *
  * @author admin
  */
-public class Age {
+public class Curiculum {
     
 }
