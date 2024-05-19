@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class UserController extends HttpServlet {
 
@@ -23,23 +24,17 @@ public class UserController extends HttpServlet {
         if (acc != null) {
             ParentDBContext parentDB = new ParentDBContext();
             Parent pa = parentDB.getParentByid(acc.getPid());
+            request.setAttribute("pa", pa);
 
-            if (pa != null) {
-                request.setAttribute("pa", pa);
+            StudentDBContext studentDB = new StudentDBContext();
+            List<Student> stu = studentDB.getStudentByIdUser(pa.getPid());
 
-                StudentDBContext studentDB = new StudentDBContext();
-                List<Student> stu = studentDB.getStudentByIdUser(pa.getPid());
-
-                if (stu != null && !stu.isEmpty()) {
-                    request.setAttribute("stu", stu);
-                } else {
-                    request.setAttribute("stu", null);
-                }
-
-                request.getRequestDispatcher("FE_Parent/ParentProfile.jsp").forward(request, response);
-            } else {
-                response.sendRedirect("error.jsp");
+            if (stu == null) {
+                stu = new ArrayList<>(); // Ensure it's not null
             }
+            request.setAttribute("stu", stu);
+
+            request.getRequestDispatcher("FE_Parent/ParentProfile.jsp").forward(request, response);
         } else {
             response.sendRedirect("Login.jsp");
         }
