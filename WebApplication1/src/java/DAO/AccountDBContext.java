@@ -18,7 +18,10 @@ import java.util.logging.Logger;
  * @author admin
  */
 public class AccountDBContext extends DBContext {
-
+    public static void main(String[] args) {
+        AccountDBContext ac = new AccountDBContext();
+        System.out.println(ac.getByUsernamePassword("Admin", "123").getUsername());
+    }
     public List<Account> getAllAccount() {
         List<Account> list = new ArrayList<>();
 
