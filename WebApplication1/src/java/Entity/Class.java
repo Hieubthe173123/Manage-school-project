@@ -11,16 +11,18 @@ package Entity;
 public class Class {
     private int classid;
     private String clname;
-    private int rid;
+    private Room rid;
 
     public Class() {
     }
 
-    public Class(int classid, String clname, int rid) {
+    public Class(int classid, String clname, Room rid) {
         this.classid = classid;
         this.clname = clname;
         this.rid = rid;
     }
+
+    
 
     public int getClassid() {
         return classid;
@@ -38,17 +40,19 @@ public class Class {
         this.clname = clname;
     }
 
-    public int getRid() {
-        return rid;
+    public void setRid(Room rid) {
+        this.rid = rid;
     }
 
-    public void setRid(int rid) {
-        this.rid = rid;
+    public Room getRid() {
+        return rid;
     }
 
     @Override
     public String toString() {
-        return "Class{" + "classid=" + classid + ", clname=" + clname + ", rid=" + rid + '}';
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
+
+    
     
 }

@@ -28,7 +28,7 @@ public class RoomDBContext extends DBContext{
 
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
-                Room r = new Room(rs.getString("rid"), rs.getString("rname");
+                Room r = new Room(rs.getInt("rid"), rs.getString("rname"));
                 return r;
             }
         } catch (SQLException ex) {
