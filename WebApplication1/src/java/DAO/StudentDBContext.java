@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * @author admin
  */
 public class StudentDBContext extends DBContext {
-    
+
     public ArrayList<Student> getAllStudent() {
         ParentDBContext parent = new ParentDBContext();
         ArrayList<Student> students = new ArrayList<>();
@@ -48,7 +48,7 @@ public class StudentDBContext extends DBContext {
         }
         return students;
     }
-    
+
     public Student getStudentById(int id) {
         ParentDBContext parent = new ParentDBContext();
         try {
@@ -79,7 +79,8 @@ public class StudentDBContext extends DBContext {
         }
         return null;
     }
-        public ArrayList<Student> getStudentByIdUser(int id) {
+
+    public ArrayList<Student> getStudentByIdUser(int id) {
         ParentDBContext parent = new ParentDBContext();
         ArrayList<Student> students = new ArrayList<>();
         try {
@@ -94,7 +95,7 @@ public class StudentDBContext extends DBContext {
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {  // Sửa đổi từ if sang while
                 Student student = new Student();
                 student.setStuid(rs.getInt("stuid"));
                 student.setSname(rs.getString("sname"));
@@ -108,6 +109,7 @@ public class StudentDBContext extends DBContext {
         } catch (SQLException e) {
             System.out.println(e);
         }
-        return null;
+        return students;  // Trả về danh sách sinh viên
     }
+
 }

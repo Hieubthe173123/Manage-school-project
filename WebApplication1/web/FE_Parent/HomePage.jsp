@@ -60,7 +60,8 @@
                     </p>
                 </div>
                 <div class="component-5">
-                    <div class="div-wrapper"><div class="text-wrapper-7">Login</div></div>
+                    
+                    <a href="Login.jsp" class="div-wrapper"class="text-wrapper-7">Login</a>
                     <a href="Contact.jsp" class="text-wrapper text-wrapper-8">Contact</a>
                     <a href="AboutUs.jsp" class="text-wrapper text-wrapper-9">About Us</a>
                     <a href="HomePage.jsp" class="text-wrapper text-wrapper-10">Home</a>
