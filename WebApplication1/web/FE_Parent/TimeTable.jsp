@@ -13,6 +13,7 @@
     </head>
     <body>
         <h2>TimeTable For Student</h2>
+        
         <table border="2">
             <thead>
                 <tr>
