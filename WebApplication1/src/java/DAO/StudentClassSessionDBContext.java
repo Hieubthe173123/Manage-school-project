@@ -42,4 +42,30 @@ public class StudentClassSessionDBContext extends DBContext {
         }
         return stu;
     }
+    
+    public List<StudentClassSession> getStudentClassSessionByStuid(int id) {
+        List<StudentClassSession> stu = new ArrayList();
+        try {
+            String sql = "SELECT [scid]\n"
+                    + "      ,[stuid]\n"
+                    + "      ,[csid]\n"
+                    + "  FROM [SchoolManagement].[dbo].[Student_Class_Session] Where stuid = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                StudentClassSession student = new StudentClassSession();
+                Class_SessionDBContext classSess = new Class_SessionDBContext();
+                StudentDBContext stud = new StudentDBContext();
+                student.setScid(rs.getInt("scid"));
+                student.setCsid(classSess.getClassSessionById(rs.getInt("csid")));
+                student.setStuid(stud.getStudentById(rs.getInt("stuid")));
+                
+                stu.add(student);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return stu;
+    }
 }

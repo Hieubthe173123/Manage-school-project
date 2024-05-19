@@ -1,32 +1,36 @@
+package Hompage;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-package Hompage;
 
-import DAO.AccountDBContext;
-import DAO.StudentDBContext;
-import Entity.Account;
-import Entity.Student;
+import DAO.CuriculumDBContext;
+import DAO.SchedulesDBContext;
+import DAO.StudentClassSessionDBContext;
+import Entity.Curiculum;
+import Entity.Schedules;
+import Entity.StudentClassSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
-import org.apache.tomcat.util.digester.ArrayStack;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name="LoginController", urlPatterns={"/login"})
-public class LoginController extends HttpServlet {
+@WebServlet(urlPatterns={"/timetable"})
+public class TimeTable extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -38,17 +42,26 @@ public class LoginController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginController at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        StudentClassSessionDBContext studen = new StudentClassSessionDBContext();
+        SchedulesDBContext sche = new SchedulesDBContext();
+        CuriculumDBContext curiculum = new CuriculumDBContext();
+        String stuid = request.getParameter("stuid");
+        HttpSession session = request.getSession();
+        int role = (int) session.getAttribute("role");
+        if(role == 1){
+            Date date = new Date();
+            SimpleDateFormat dateF = new SimpleDateFormat("yyyy-MM-dd");
+            
+            List<StudentClassSession> list = studen.getStudentClassSessionByStuid(Integer.parseInt(stuid));
+            int classI = 0;
+            for (StudentClassSession x : list) {
+                classI = x.getCsid().getCsid();
+            }
+            // Lấy ra ngày hiện tại và lớp học
+            Schedules schedules = sche.getSchedulesByCsIdAndDate(classI, dateF.format(date).toString());
+            List<Curiculum> curi = curiculum.getCuriculumById(schedules.getSdid().getSdid());
+            request.setAttribute("curiculum", curi);
+            request.getRequestDispatcher("FE_Parent/TimeTable.jsp").forward(request, response);
         }
     } 
 
@@ -63,7 +76,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-       request.getRequestDispatcher("FE_Parent/Login.jsp").forward(request, response);
+        processRequest(request, response);
     } 
 
     /** 
@@ -76,35 +89,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String user_raw = request.getParameter("username");
-        String pass_raw = request.getParameter("password");
-        AccountDBContext db = new AccountDBContext();   
-        StudentDBContext stu = new StudentDBContext();
-        
-        Account acc = db.getByUsernamePassword(user_raw, pass_raw);
-        
-        
-        HttpSession session = request.getSession();
-        if (acc != null) {
-            if(acc.getRole() == 1){
-                List<Student> list = stu.getStudentByPid(acc.getPid());
-                session.setAttribute("role", acc.getRole());
-                request.setAttribute("list", list);
-                request.getRequestDispatcher("FE_Parent/StudentOfParent.jsp").forward(request, response);
-            }else if(acc.getRole() == 2){
-                
-            }else{
-                
-            }
-            
-        
-       
-            request.setAttribute("err", "Login Success");
-        } else {
-            request.setAttribute("err", "username or password invalid!!! Please try again.");
-            
-        }
-        request.getRequestDispatcher("FE_Parent/Login.jsp").forward(request, response);    
+        processRequest(request, response);
     }
 
     /** 

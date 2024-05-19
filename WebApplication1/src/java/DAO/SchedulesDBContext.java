@@ -14,7 +14,10 @@ import java.sql.SQLException;
  * @author Admin
  */
 public class SchedulesDBContext extends DBContext {
-
+    public static void main(String[] args) {
+        SchedulesDBContext s = new SchedulesDBContext();
+        System.out.println(s.getSchedulesByCsIdAndDate(1, "2024-05-20").getCsid().getCsid());
+    }
     public Schedules getSchedulesByCsIdAndDate(int id, String date) {
         Schedules schel = new Schedules();
         try {
@@ -30,7 +33,7 @@ public class SchedulesDBContext extends DBContext {
             if (rs.next()) {
                 SessionDetailDBContext ses = new SessionDetailDBContext();
                 Class_SessionDBContext cla = new Class_SessionDBContext();
-                schel.setScheID(rs.getInt("mid"));
+                schel.setScheID(rs.getInt("scheID"));
                 schel.setDate(rs.getDate("Date"));
                 schel.setSdid(ses.getSessionDetailById(rs.getInt("sdid")));
                 schel.setCsid(cla.getClassSessionById(rs.getInt("csid")));
