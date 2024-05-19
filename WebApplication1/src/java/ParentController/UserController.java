@@ -5,18 +5,25 @@
 
 package ParentController;
 
+import DAO.ParentDBContext;
+import DAO.StudentDBContext;
+import Entity.Account;
+import Entity.Parent;
+import Entity.Student;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
- * @author DELL
+ * @author admin
  */
-public class NewServlet extends HttpServlet {
+public class UserController extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -33,31 +40,57 @@ public class NewServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");  
+            out.println("<title>Servlet UserController</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet UserController at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     } 
 
-    
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /** 
+     * Handles the HTTP <code>GET</code> method.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
     } 
 
-   
+    /** 
+     * Handles the HTTP <code>POST</code> method.
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Account acc = (Account) session.getAttribute("account");
+        if (acc != null) {
+            ParentDBContext parentDB = new ParentDBContext();
+            Parent pa = parentDB.getParentByid(acc.getPid());
+            request.setAttribute("pa", pa);
+
+            StudentDBContext studentDB = new StudentDBContext();
+            List<Student> stu = studentDB.getStudentByIdUser(pa.getPid());
+            request.setAttribute("stu", stu);
+
+            request.getRequestDispatcher("ParentProfile.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("login.jsp");
+        }
         
-        request.getRequestDispatcher("FE_Parent/HomePage.jsp").forward(request, response);
     }
 
-    
     @Override
     public String getServletInfo() {
         return "Short description";

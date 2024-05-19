@@ -4,6 +4,7 @@
     Author     : DELL
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,10 +15,11 @@
     </head>
     <body>
        <div class="user-profile">
-            <div class="div">
+           <c:forEach items="${pa}">
+               <div class="div">
                 <div class="overlap-group">
                     <div class="overlap">
-                        <div class="text-wrapper">Bố Phùng Anh Tuấn</div>
+                        <div class="text-wrapper">${pa.pname}</div>
                         <div class="text-wrapper-2">Mẹ Lê Lan Chi</div>
                         <div class="overlap-2">
                             <p class="gi-o-vi-n">
@@ -74,7 +76,8 @@
                     <div class="rectangle-6"></div>
                     <div class="text-wrapper-26">Update profile</div>
                 </div>
-            </div>
+            </div></c:forEach>
+            
         </div>
 
     </body>

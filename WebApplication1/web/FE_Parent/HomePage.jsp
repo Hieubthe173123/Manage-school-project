@@ -61,10 +61,10 @@
                 </div>
                 <div class="component-5">
                     <div class="div-wrapper"><div class="text-wrapper-7">Login</div></div>
-                    <div class="text-wrapper-8">Contact</div>
-                    <div class="text-wrapper-9">About Us</div>
-                    <div class="text-wrapper-10">Home</div>
-                    <div class="text-wrapper-11">Sakura</div>
+                    <a href="Contact.jsp" class="text-wrapper text-wrapper-8">Contact</a>
+                    <a href="AboutUs.jsp" class="text-wrapper text-wrapper-9">About Us</a>
+                    <a href="HomePage.jsp" class="text-wrapper text-wrapper-10">Home</a>
+                    <a href="HomePage.jsp" class="text-wrapper text-wrapper-11">Sakura</a>
                     <img class="icon-park-solid-fire" src="img/icon-park-solid-fire.svg" />
                 </div>
                 <div class="partners">

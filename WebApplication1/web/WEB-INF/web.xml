@@ -4,8 +4,16 @@
         <servlet-name>NewServlet</servlet-name>
         <servlet-class>ParentController.NewServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>ParentController.UserController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/new</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/user-profile</url-pattern>
     </servlet-mapping>
 </web-app>
