@@ -78,9 +78,12 @@ public class LoginController extends HttpServlet {
         AccountDBContext db = new AccountDBContext();
         Account acc = db.getByUsernamePassword(user_raw, pass_raw);
         HttpSession session = request.getSession();
+        session.setAttribute("account", acc);
         if (acc != null) {
             request.setAttribute("err", "Login Success");
-            request.getRequestDispatcher("FE_Parent/Login.jsp").forward(request, response);
+          //  request.getRequestDispatcher("FE_Parent/ParentProfile.jsp").forward(request, response);
+             response.sendRedirect("user-profile");
+            
         } else {
             request.setAttribute("err", "username or password invalid!!! Please try again.");
             request.getRequestDispatcher("FE_Parent/Login.jsp").forward(request, response);
