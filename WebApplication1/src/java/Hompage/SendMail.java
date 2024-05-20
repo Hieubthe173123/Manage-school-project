@@ -7,7 +7,6 @@ package Hompage;
 import java.util.*;
 import jakarta.mail.*;
 import jakarta.mail.internet.*;
-import java.security.SecureRandom;
 
 /**
  *
@@ -15,14 +14,10 @@ import java.security.SecureRandom;
  */
 public class SendMail {
 
-    private static final String CHA_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    private static final int PASS_WORD_LENGTH = 10;
-    private static final SecureRandom RANDOM_PASSWORD = new SecureRandom();
-
     public static void send(String to, String title, String msg, final String user, final String pass) {
         //Cấu hình Properties
         Properties pop = new Properties();
-        pop.put("mail.smtp.host", "smtp.gmanl.com");
+        pop.put("mail.smtp.host", "smtp.gmail.com");
         //SMTP server
         pop.put("mail.smtp.port", "587");
         pop.put("mail.smtp.auth", "true");
@@ -44,27 +39,16 @@ public class SendMail {
             message.setContent(msg, "text/html");
             Transport.send(message);
         } catch (MessagingException e) {
-//            e.printStackTrace();
-            System.out.println("Send Mail is Failed !!!");
+            e.printStackTrace();
         }
 
-    }
-
-    private static String generateRandomPassword() {
-        StringBuilder pass = new StringBuilder(PASS_WORD_LENGTH);
-        for (int i = 0; i < PASS_WORD_LENGTH; i++) {
-            pass.append(CHA_STRING.charAt(RANDOM_PASSWORD.nextInt(CHA_STRING.length())));
-        }
-        return pass.toString();
     }
 
     public static void main(String[] args) {
-        String to = "kiend1364@gmail.com";
+        String to = "Vintkhe176898@fpt.edu.vn";
         String title = "Sakura school - Forgot Password";
         String from = "kienpdhe170155@fpt.edu.vn";
         String password = "lrrq jpje rszs cann";
-
-        String newPassword = generateRandomPassword();
 
         String contentToSendMail = "<!DOCTYPE html>\n"
                 + "<html>\n"
@@ -85,7 +69,7 @@ public class SendMail {
                 + "        </div>\n"
                 + "        <div class='content'>\n"
                 + "            <p>Your PassWord will be change here!!</p>\n"
-                + "            <p>" + newPassword + "</p>\n"
+                + "            <p>123456789</p>\n"
                 + "        </div>\n"
                 + "        <div class='footer'>\n"
                 + "            <p>&copy; 2024 Sakura School. Make your best day</p>\n"
@@ -93,7 +77,7 @@ public class SendMail {
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-
+        
         SendMail.send(to, title, contentToSendMail, from, password);
 
     }
