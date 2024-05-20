@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class UserController extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        HttpSession session = request.getSession();
+   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+   HttpSession session = request.getSession();
         Account acc = (Account) session.getAttribute("account");
 
         if (acc != null) {
@@ -38,12 +38,12 @@ public class UserController extends HttpServlet {
         } else {
             response.sendRedirect("Login.jsp");
         }
-    }
+}
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+         processRequest(request, response);
     }
 
     @Override

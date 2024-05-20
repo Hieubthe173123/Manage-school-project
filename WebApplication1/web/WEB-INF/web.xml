@@ -16,4 +16,14 @@
         <servlet-name>UserController</servlet-name>
         <url-pattern>/user-profile</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>com.yourpackage.RedirectServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>RedirectServlet</servlet-name>
+        <url-pattern>/FE_Parent/login</url-pattern>
+    </servlet-mapping>
+
 </web-app>

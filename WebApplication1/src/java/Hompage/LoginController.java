@@ -61,6 +61,12 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
        request.getRequestDispatcher("FE_Parent/Login.jsp").forward(request, response);
+       String uri = request.getRequestURI();
+        if (uri.contains("/FE_Parent/login")) {
+            response.sendRedirect(request.getContextPath() + "/login");
+        } else {
+            // Handle other redirects if needed
+        }
     } 
 
     /** 

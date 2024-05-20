@@ -1,69 +1,99 @@
-<%-- 
-    Document   : ParentProfile
-    Created on : May 16, 2024, 9:55:22 PM
-    Author     : DELL
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" href="../CSS/ParentProfile.css"/>
+        <meta charset="UTF-8">
+        <title>Parent Profile</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+                background-color: #b3d9ff;
+            }
+
+            .info-group {
+                margin-bottom: 1rem;
+            }
+
+            .info-group label {
+                font-weight: bold;
+                margin-bottom: 0.25rem;
+                color: #333;
+            }
+
+            .info-group p {
+                margin-bottom: 0;
+                color: #666;
+            }
+
+            .card {
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .card-header {
+                background-color: #f0f9ff;
+                padding: 1rem;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .card-body {
+                padding: 2rem;
+            }
+        </style>
     </head>
     <body>
-        <div class="user-profile">
-            <div class="div">
-                <div class="overlap-group">
-                    <div class="overlap">
-                        <div class="text-wrapper">${pa.pname}</div>
-                        <div class="text-wrapper-2">Mẹ Lê Lan Chi</div>
-                        <div class="overlap-2">
-                            <p class="gi-o-vi-n">
-                                <span class="span">Giáo Viên<br /></span> <span class="text-wrapper-3"><br /></span>
-                            </p>
-                            <div class="text-wrapper-4">Nguyễn Thảo Trang</div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>${pa.pname}</h2>
                         </div>
-                        <div class="text-wrapper-5">Phụ Huynh</div>
-                        <div class="text-wrapper-6">${pa.email}</div>
+                        <div class="card-body">
+                            <div class="info-group">
+                                <label>Tên thường gọi</label>
+                                <p>${pa.nickname}</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Họ và tên</label>
+                                <p>${pa.pname}</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Ngày sinh</label>
+                                <p>${pa.dob}</p>
+                            </div>
+                            <div class="info-group">
+                                <label>Email</label>
+                                <p>${pa.email}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="overlap-3">
-                        <div class="text-wrapper-7">Tên thường gọi</div>
-                        <div class="text-wrapper-8">${pa.nickname}</div>
-                    </div>
-                    <div class="overlap-4">
-                        <div class="text-wrapper-9">Họ và tên</div>
-                        <div class="text-wrapper-10">${pa.pname}</div>
-                    </div>
-                    <div class="overlap-5">
-                        <div class="text-wrapper-11">Ngày sinh</div>
-                        <div class="text-wrapper-12">${pa.dob}</div>
-                    </div>
-                    <div class="text-wrapper-13">THÔNG TIN CỦA BÉ</div>
                 </div>
-
-                <c:forEach var="student" items="${stu}">
-                    <div class="navbar">
-                        <div class="rectangle"></div>
-                        <div class="text-wrapper-14">Họ và tên</div>
-                        <div class="text-wrapper-15">${student.sname}</div>
-                    </div>
-                    <div class="text-wrapper-16">THÔNG TIN CÁ NHÂN</div>
-                    <div class="overlap-7">
-                        <div class="text-wrapper-17">SĐT</div>
-                        <div class="text-wrapper-18">${student.gender}</div>
-                    </div>
-                    <div class="overlap-8">
-                        <div class="text-wrapper-19">Email</div>
-                        <div class="text-wrapper-20">${student.address}</div>
-                    </div>
-                    <div class="overlap-9">
-                        <div class="text-wrapper-21">Ngày sinh</div>
-                        <div class="text-wrapper-22">${student.dob}</div>
-                    </div>
-                </c:forEach>
+                <div class="col-md-8">
+                    <c:forEach var="student" items="${stu}">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <h3>${student.sname}</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="info-group">
+                                    <label>SĐT</label>
+                                    <p>${student.gender}</p>
+                                </div>
+                                <div class="info-group">
+                                    <label>Email</label>
+                                    <p>${student.address}</p>
+                                </div>
+                                <div class="info-group">
+                                    <label>Ngày sinh</label>
+                                    <p>${student.dob}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </div>
     </body>
